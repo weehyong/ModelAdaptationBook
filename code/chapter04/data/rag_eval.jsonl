@@ -1,0 +1,10 @@
+{"query": "How long does a customer have to request a refund?", "expected_doc_id": "doc_billing_001"}
+{"query": "Can I get a refund on an annual plan if I cancel mid-year?", "expected_doc_id": "doc_billing_001"}
+{"query": "What payment methods does the platform support for enterprise contracts?", "expected_doc_id": "doc_billing_002"}
+{"query": "How long does a password reset link stay valid?", "expected_doc_id": "doc_login_001"}
+{"query": "Why can't an Okta user reset their password through the standard flow?", "expected_doc_id": "doc_login_001"}
+{"query": "Which 2FA methods are supported and which is preferred?", "expected_doc_id": "doc_login_002"}
+{"query": "How often does the Salesforce integration sync contacts?", "expected_doc_id": "doc_integrations_001"}
+{"query": "Are customer documents encrypted at rest, and with what algorithm?", "expected_doc_id": "doc_security_001"}
+{"query": "What is the rate limit for API keys on the Standard tier?", "expected_doc_id": "doc_api_001"}
+{"query": "Is there a grace period after I rotate my API key?", "expected_doc_id": "doc_api_002"}

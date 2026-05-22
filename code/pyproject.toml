@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "model-adaptation-book"
+version = "0.1.0"
+description = "Runnable code for the book Practical Model Adaptation Techniques for Large Language Models."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "accelerate>=0.30.0",
+  "datasets>=2.19.0",
+  "evaluate>=0.4.2",
+  "huggingface_hub>=0.23.0",
+  # PEFT 0.18+ moves VARIANT_KWARG_KEYS in a way unsloth's compile cache
+  # cannot resolve. Cap at <0.18 until unsloth catches up.
+  "peft>=0.12.0,<0.18",
+  "rich>=13.7.0",
+  # safetensors 0.6+ dropped builtins.safe_open, which breaks datasets.map
+  # fingerprinting via dill. Cap until safetensors restores the symbol or
+  # datasets stops fingerprinting through it.
+  "safetensors>=0.4.3,<0.6",
+  "sentence-transformers>=3.0.0",
+  "transformers>=4.47.0",
+  "trl>=0.9.0",
+  "python-dotenv>=1.0.1",
+]
+
+[project.optional-dependencies]
+# QLoRA / quantization support. Keep optional for macOS/CPU-only readers.
+qlora = ["bitsandbytes>=0.43.0"]
+
+# Chapter 2 — Unsloth-based open-finance fine-tuning quick-start.
+# Pulls Unsloth's fast training kernels plus bitsandbytes for 4-bit support.
+# Linux/CUDA only; do not install on macOS or CPU-only environments.
+chapter02 = [
+  "unsloth>=2024.0",
+  "unsloth_zoo>=2024.0",
+  "bitsandbytes>=0.43.0",
+]
+
+# Chapter 3 — data-quality experiment and synthetic data pipeline.
+# Includes Unsloth (for the §3.1 experiment), the Anthropic SDK (for the
+# §3.7 synthetic data pipeline), and the plotting / metrics packages
+# the experiment script uses.
+chapter03 = [
+  "unsloth>=2024.0",
+  "unsloth_zoo>=2024.0",
+  "bitsandbytes>=0.43.0",
+  "anthropic>=0.30.0",
+  "matplotlib>=3.8",
+  "scikit-learn>=1.4",
+]
+
+# Optional experiment tracking.
+wandb = ["wandb>=0.16.0"]
+
+# Dev/test tooling (lightweight).
+dev = [
+  "pytest>=8.0.0",
+  "ruff>=0.4.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+# Packages: common (shared utilities), chapter05, chapter06, ... (code by chapter)
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

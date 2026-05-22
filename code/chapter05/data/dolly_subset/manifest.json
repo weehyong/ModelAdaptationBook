@@ -1,0 +1,26 @@
+{
+  "dataset": "databricks/databricks-dolly-15k",
+  "split": "train",
+  "created_utc": "2026-05-09T03:35:40.589592Z",
+  "seed": 42,
+  "filters": {
+    "min_length": 20,
+    "max_length": 2000
+  },
+  "counts": {
+    "train": 400,
+    "valid": 50,
+    "test": 50
+  },
+  "category_distribution": {
+    "general_qa": 69,
+    "open_qa": 107,
+    "closed_qa": 41,
+    "summarization": 29,
+    "brainstorming": 41,
+    "classification": 61,
+    "information_extraction": 42,
+    "creative_writing": 10
+  },
+  "system_prompt": "You are a helpful assistant."
+}

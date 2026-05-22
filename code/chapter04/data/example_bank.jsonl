@@ -1,0 +1,35 @@
+{"ticket": "My credit card was charged twice for the May invoice. Please refund the duplicate charge.", "category": "billing"}
+{"ticket": "I see a charge on my account from last month that I do not recognize. Can someone explain what this is?", "category": "billing"}
+{"ticket": "The annual renewal pulled the wrong card. Please switch the payment method to the new card on file.", "category": "billing"}
+{"ticket": "I cannot log in after the password reset email. The new password is rejected as invalid.", "category": "login"}
+{"ticket": "My SSO session keeps timing out after about ten minutes. Other users in my team are not seeing this.", "category": "login"}
+{"ticket": "Two-factor authentication codes are not arriving on my phone. I have tried both SMS and the authenticator app.", "category": "login"}
+{"ticket": "The Salesforce integration stopped syncing contacts last Tuesday. The error log shows a 401 from their API.", "category": "integrations"}
+{"ticket": "How do I set up the Slack integration so notifications go to a private channel instead of the default one?", "category": "integrations"}
+{"ticket": "Webhook deliveries to our endpoint are failing with timeouts. We need to debug what is being sent.", "category": "integrations"}
+{"ticket": "The iOS app crashes on launch after the latest TestFlight update. Crash report attached.", "category": "mobile"}
+{"ticket": "The Android app does not show push notifications even though they are enabled in settings.", "category": "mobile"}
+{"ticket": "Dark mode in the mobile app does not match the website. Some screens stay light when the OS is set to dark.", "category": "mobile"}
+{"ticket": "Page load times have doubled this week. Our team's dashboard takes nine seconds to render now.", "category": "performance"}
+{"ticket": "Search results are very slow when there are more than fifty filters applied. Users are giving up before results appear.", "category": "performance"}
+{"ticket": "We see intermittent 504 gateway timeouts on the analytics endpoint, mostly during peak hours.", "category": "performance"}
+{"ticket": "How do I export all our customer records to CSV? I need to share them with our finance team for year-end audit.", "category": "data_export"}
+{"ticket": "The bulk export feature times out for accounts with more than fifty thousand records. Is there a chunked approach?", "category": "data_export"}
+{"ticket": "I want to set up a monthly automatic export of campaign metrics to S3. Can the platform do this natively?", "category": "data_export"}
+{"ticket": "The REST API rate limit is rejecting our requests at 100 per minute. We are billed for the higher tier and expect 1000.", "category": "api"}
+{"ticket": "Our integration is getting 500 errors when calling the bulk update endpoint with more than 200 items. The docs say 500 is the limit.", "category": "api"}
+{"ticket": "How do I rotate the API key without breaking active integrations? The docs are not clear on the grace period.", "category": "api"}
+{"ticket": "We received an alert about unusual login activity from an unfamiliar country. Can you confirm whether this was a real attempt and lock the account if needed?", "category": "security"}
+{"ticket": "Our compliance team is asking for SOC 2 documentation for the recent audit. Where do I download this from?", "category": "security"}
+{"ticket": "Can we enforce SAML for all users in our org? Some users are still allowed to use password login.", "category": "security"}
+{"ticket": "I just signed up. Can someone help me invite my team and set up our first workspace? The setup wizard is not loading.", "category": "onboarding"}
+{"ticket": "The tutorial video on the welcome page is broken. The player just shows a black screen.", "category": "onboarding"}
+{"ticket": "I am evaluating the platform for our team. What is the best way to import our existing data without committing to a paid plan?", "category": "onboarding"}
+{"ticket": "We would love an option to bulk-tag tickets based on keyword matching. Right now we have to do this one ticket at a time.", "category": "feature_request"}
+{"ticket": "Could the dashboard add a comparison view that overlays last quarter's metrics on the current quarter? This would save a lot of manual work.", "category": "feature_request"}
+{"ticket": "Please add OAuth support for Microsoft accounts. Many of our users are on Office 365 and prefer this.", "category": "feature_request"}
+{"ticket": "The export button on the reports page does nothing when clicked. The browser console shows a TypeError on undefined.", "category": "bug_report"}
+{"ticket": "When I edit a record and click save, the changes appear to apply but revert after a refresh. This started today.", "category": "bug_report"}
+{"ticket": "The date picker is showing dates in the wrong timezone. We are in UTC+5:30 and it shows UTC times.", "category": "bug_report"}
+{"ticket": "I have a quick question about whether the platform supports custom fields. Can someone get back to me?", "category": "other"}
+{"ticket": "Just wanted to say thanks for the recent UI refresh. The team likes the new layout.", "category": "other"}

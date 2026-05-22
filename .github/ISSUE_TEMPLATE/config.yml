@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Book content questions — Manning liveBook forum
+    url: https://livebook.manning.com/
+    about: Please ask questions about the book's content (techniques, choices, explanations) in Manning's liveBook forum. GitHub Issues is for code bugs and errata only.
+  - name: Manning support
+    url: https://support.manning.com/
+    about: Questions about your MEAP subscription, account, or purchase.

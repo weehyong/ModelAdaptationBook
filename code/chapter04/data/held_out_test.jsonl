@@ -1,0 +1,18 @@
+{"ticket": "I noticed I was billed twice for last month's subscription. Can you process a refund?", "category": "billing"}
+{"ticket": "Is there a way to update the credit card on file before the next billing cycle?", "category": "billing"}
+{"ticket": "Password reset links expire too quickly. By the time I check my email and click, it says expired.", "category": "login"}
+{"ticket": "Single sign-on is not working with our Okta tenant. We get a SAML response error after authenticating.", "category": "login"}
+{"ticket": "The HubSpot integration imports contacts but skips email addresses. It worked fine last week.", "category": "integrations"}
+{"ticket": "The Android app freezes when I try to attach a file from Google Drive. The screen locks up for ten seconds.", "category": "mobile"}
+{"ticket": "Our team's reporting dashboard takes over thirty seconds to load and sometimes never finishes.", "category": "performance"}
+{"ticket": "How do I schedule a weekly export of our user activity logs? I need them for compliance reporting.", "category": "data_export"}
+{"ticket": "The bulk update endpoint returns 429 Too Many Requests when our integration sends parallel requests.", "category": "api"}
+{"ticket": "Can you confirm whether our account uses encryption at rest for stored documents? Our security team is asking.", "category": "security"}
+{"ticket": "I am setting up a new workspace and the invite emails to my team members are not arriving. I checked spam.", "category": "onboarding"}
+{"ticket": "It would be helpful if the platform could send digest emails of weekly activity rather than individual notifications.", "category": "feature_request"}
+{"ticket": "When I save a new contact, the phone number field strips the country code. The original input has a plus sign.", "category": "bug_report"}
+{"ticket": "Just curious: does the platform have a public API for the new analytics module?", "category": "other"}
+{"ticket": "The user list export is missing the date_created column even though I selected it in the export options.", "category": "data_export"}
+{"ticket": "Could you add a feature to schedule recurring tasks with a custom cadence beyond daily and weekly?", "category": "feature_request"}
+{"ticket": "Our SSO works for most users but three users in our finance team get a 401 every time. Their accounts are configured the same as everyone else's.", "category": "login"}
+{"ticket": "The mobile app shows duplicate notifications when I am also signed in on the web. Can these be deduplicated?", "category": "mobile"}
