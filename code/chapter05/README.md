@@ -66,7 +66,7 @@ We use **`databricks/databricks-dolly-15k`** because:
 ### One-Time Setup (Fresh Machine)
 
 **First-time setup:** If you haven't set up the book environment yet, follow the detailed instructions in **`code/README.md`** (one directory up). This includes:
-- Checking Python version (**3.10+ required**)
+- Checking Python version (**3.12+ required**)
 - Installing system prerequisites (Ubuntu/Debian: `python3-venv`)
 - Creating virtual environment
 - Installing PyTorch (CPU or CUDA)
@@ -81,6 +81,8 @@ pip install -e ".[qlora]"
 ```
 
 QLoRA is optional. If you do not plan to run Step 5, you can skip this extra.
+
+> **On a Mac?** QLoRA (Step 5) does not run on Apple Silicon: `bitsandbytes` 4-bit kernels are CUDA/ROCm-only, with no Metal/MPS build. Removing `bitsandbytes` would not make QLoRA run on a Mac, it would just remove the 4-bit path that makes it QLoRA. Use the LoRA branch (Steps 1-4), which needs no `bitsandbytes` and trains on MPS. See [ACCELERATORS.md](../../ACCELERATORS.md#why-qlora-needs-an-nvidia-or-amd-gpu) for the full explanation.
 
 ### Verify Your Setup (Recommended)
 
