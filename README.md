@@ -1,8 +1,19 @@
 # LLM Customization and Fine-Tuning: Adaptation, Distillation, and Alignment
 
+<table border="0"><tr>
+<td valign="top">
+
 *From a prompt to a fine-tuned, aligned, monitored assistant: every technique for adapting an open-weights LLM to your domain, on a single GPU, with reproducible numbers and the honesty to show when a technique does not win.*
 
-![The whole-book arc as one diagram: a base model (Qwen3-4B) moves left to right through the adaptation spectrum with increasing depth (few-shot/RAG in chapter 4, LoRA/QLoRA in chapter 5, full SFT in chapter 6, distillation in chapter 7, DPO alignment in chapter 8) into a focused domain assistant that is cheaper, private, and monitored. The spectrum sits on a data foundation (chapter 3: quality, attribution, splits) and under an operations layer (chapter 9: monitor, drift, rollback, retrain), and every step runs on a single GPU with reproducible, measured results.](assets/book-hero.png)
+**Available now in Manning's [Early Access Program (MEAP)](https://www.manning.com/books/llm-customization-and-fine-tuning):** read the chapters as they are released, run the code alongside them, and get the full ebook and print edition on publication.
+
+**Read it on Manning → [manning.com/books/llm-customization-and-fine-tuning](https://www.manning.com/books/llm-customization-and-fine-tuning)**
+
+</td>
+<td width="250" valign="top">
+<a href="https://www.manning.com/books/llm-customization-and-fine-tuning"><img src="assets/Bahree-Book-Cover-MEAP.jpg" alt="Book cover: LLM Customization and Fine-Tuning: Adaptation, Distillation, and Alignment (Manning, MEAP)" width="230"></a>
+</td>
+</tr></table>
 
 Welcome to the code repository for **LLM Customization and Fine-Tuning: Adaptation, Distillation, and Alignment** (Manning Publications).
 
@@ -10,7 +21,7 @@ This repository contains all the runnable code, data, and examples from the book
 
 It is a hands-on, cost-aware playbook for turning a general-purpose open-weights LLM into a focused, cheaper, privately hosted system that beats a generic API call on your domain, and for keeping it reliable in production. Every technique is backed by runnable code that reproduces the book's measured results on a single GPU.
 
-**Book Publisher:** Manning Publications (forthcoming)
+**Book Publisher:** Manning Publications, available now in [Early Access (MEAP)](https://www.manning.com/books/llm-customization-and-fine-tuning)
 **Repository:** <https://github.com/bahree/ModelAdaptationBook>
 
 > **Get started in minutes.** Jump to the **[Quick start](#quick-start)** (clone, install for your accelerator, smoke-test), then [`code/README.md`](code/README.md) for the full environment setup. Your first LoRA fine-tune (chapter 2) runs in **under 10 minutes on a single 12 GB GPU**, or on Apple Silicon.
@@ -20,6 +31,8 @@ It is a hands-on, cost-aware playbook for turning a general-purpose open-weights
 ## About the book
 
 This book is a practitioner's playbook for adapting large language models to specific use cases in a production setting. It covers the full customization spectrum, from prompting (chapter 4) through parameter-efficient fine-tuning (chapter 5), full supervised fine-tuning (chapter 6), distillation (chapter 7), preference optimisation (chapter 8), and the operational layer that keeps a fine-tuned model honest in production (chapter 9). By the last chapter you have taken one model, Qwen3-4B, from a base model through LoRA, full SFT, distillation, and DPO alignment, and into a drift-and-safety-monitored deployment, measuring cost and quality at each step.
+
+![The whole-book arc as one diagram: a base model (Qwen3-4B) moves left to right through the adaptation spectrum with increasing depth (few-shot/RAG in chapter 4, LoRA/QLoRA in chapter 5, full SFT in chapter 6, distillation in chapter 7, DPO alignment in chapter 8) into a focused domain assistant that is cheaper, private, and monitored. The spectrum sits on a data foundation (chapter 3: quality, attribution, splits) and under an operations layer (chapter 9: monitor, drift, rollback, retrain), and every step runs on a single GPU with reproducible, measured results.](assets/book-hero.png)
 
 ### The problem it solves
 
