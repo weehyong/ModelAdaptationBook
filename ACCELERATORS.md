@@ -105,12 +105,35 @@ The code is not pinned to one accelerator. The table records the exact machines 
 
 | Accelerator | Machine | OS | Driver / runtime | PyTorch | Coverage |
 |---|---|---|---|---|---|
+| NVIDIA CUDA | DGX Spark (GB10) | Linux (aarch64) | driver 580.159.03, CUDA 13.0 | 2.13.0+cu130 | Chapters 1 to 5 validated end-to-end with chapter-oriented recipe (`smoke`, `ch1` ... `ch5`, `all`), including chapter 2 quickstart training, chapter 3 synthetic pipeline, chapter 4 HF backend, and chapter 5 LoRA smoke + eval |
 | NVIDIA CUDA | A30 (24 GB) | Linux | CUDA 12.x | 2.11+cu126 | All chapters (reference platform for the book's published numbers) |
 | NVIDIA CUDA | H200 (140 GB) | Ubuntu (Nebius) | driver 580.159.04 | 2.12.1+cu126 | Full book end-to-end via validate_all.sh (25/25, incl. all training) |
 | NVIDIA CUDA | B200 (179 GB, Blackwell) | Ubuntu (Nebius) | driver 580.159.04 | 2.11.0+cu128 | Full book end-to-end via validate_all.sh (25/25); needs the cu128 wheel for sm_100, and 4-bit QLoRA is slow on current Blackwell kernels (see below) |
 | Apple Silicon (MPS) | Apple M2 Pro, 16 GB (also M4, 16 GB) | macOS 26.3 (and 15.6) | Metal / MPS | 2.x | Ch4, Ch5 LoRA + adapter load, Ch9 (drift, registry, rollback, safety monitor, canary on MPS), and pull-and-run of the published ch5/ch6/ch8 models. Ch5 QLoRA correctly fast-fails; full-parameter Ch6/7/8 training does not fit 16 GB (pull from Hugging Face instead). |
 | AMD ROCm | Instinct MI300X (192 GB) | Ubuntu 24.04 | ROCm 7.x, HIP 7.0.51831 | 2.10.0+rocm7.0 | Full book end-to-end, including Ch5 QLoRA (4-bit) and full-parameter Ch6/7/8 |
 | AMD ROCm | Instinct MI300X (192 GB) | Ubuntu (RunPod) | ROCm 6.1, HIP 6.1.40091 | 2.6.0+rocm6.1 | Full book except Ch5 QLoRA via validate_all.sh (24/25); QLoRA needs ROCm 6.2+ (no `bitsandbytes` 6.1 kernel, see AMD notes) |
+
+## DGX Spark (GB10) run details (chapters 1 to 5)
+
+We validated the DGX Spark chapter recipe end-to-end, including each target
+(`smoke`, `ch1`, `ch2`, `ch3`, `ch4`, `ch5`) and the umbrella `all` target.
+Run artifacts are in `code/validation/cuda_dgx_spark/`.
+
+Key points from the run:
+
+- **Use cu130 wheels on GB10.** A cu126 wheel detects CUDA but warns that
+	kernels are not built for `sm_121` (compute capability 12.1). The tested-good
+	setup is PyTorch `2.13.0+cu130`.
+- **Recipe fix landed during validation.** The chapter 2 data prep path
+	originally called `reformat_it_answers.py` without required flags. The recipe
+	now passes:
+	`python scripts/reformat_it_answers.py --in data/it_support/train.jsonl --out data/it_support_fmt/train.jsonl`.
+- **Optional OpenRouter warnings are non-fatal.** If `OPENROUTER_API_KEY` is
+	unset, the reformat step logs warnings and keeps passthrough rows; the run
+	still completes.
+- **Known warning noise remains non-blocking.** Some scripts emit
+	`torch_dtype` deprecation and generation-config warnings (`top_p`/`top_k`);
+	execution and outputs are unaffected.
 
 ## Dependency versions
 
