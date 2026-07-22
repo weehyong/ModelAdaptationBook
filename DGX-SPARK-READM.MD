@@ -224,3 +224,23 @@ Examples:
 Validation logs and run report from a real DGX Spark pass are in:
 
 - `code/validation/cuda_dgx_spark/`
+
+### Recipe validation status
+
+The new chapter-oriented recipe was exercised on DGX Spark in this environment:
+
+- `./DGX-SPARK-RECIPE.sh smoke` -> PASS
+- `./DGX-SPARK-RECIPE.sh ch4` -> PASS
+- `./DGX-SPARK-RECIPE.sh ch1` -> PASS
+- `./DGX-SPARK-RECIPE.sh ch2` -> PASS (after recipe fix)
+- `./DGX-SPARK-RECIPE.sh ch3` -> PASS
+- `./DGX-SPARK-RECIPE.sh ch5` -> PASS
+- `./DGX-SPARK-RECIPE.sh all` -> PASS
+
+Recipe fix applied during validation:
+
+- Updated data reformat step to pass required args:
+  `python scripts/reformat_it_answers.py --in data/it_support/train.jsonl --out data/it_support_fmt/train.jsonl`
+
+If you are trying this on a fresh DGX Spark machine, run `setup` first, then
+`smoke`, then chapter commands (`ch1` ... `ch5`) or `all`.
